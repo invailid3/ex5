@@ -7,10 +7,15 @@ function calculate (){
     
     let result = quantity * price;
 
-    if(isNaN(result)){
+    if(isNaN(result) || result < 0){
         resultEl.innerHTML = "Remind";
     }
     else{
         resultEl.innerHTML = "Result: " +  result;    
     }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    let buttonEl = document.getElementById("calc-butt");
+    buttonEl.addEventListener("click", calculate);
+});
